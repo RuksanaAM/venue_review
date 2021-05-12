@@ -1,0 +1,15 @@
+{% extends 'admin/admin_panel.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/admin_add_categorypost">
+  <table width="518" height="103" border="1" class="table table-bordered">
+    <tr>
+      <th scope="row">Category</th>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" /></td>
+    </tr>
+    <tr>
+        <th colspan="2" scope="row"><font color="#f0f8ff" ><input class="btn btn-danger" type="submit" name="button" id="button" value="Add" /></font></th>
+    </tr>
+  </table>
+</form>
+{% endblock %}

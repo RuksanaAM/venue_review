@@ -1,0 +1,20 @@
+
+{% extends 'admin/admin_panel.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table width="656" height="102" border="1" class="table table-bordered">
+    <tr>
+      <th scope="row">SI</th>
+      <td>CATEGORY</td>
+      <td>&nbsp;</td>
+    </tr>
+{% for i in data %}
+    <tr>
+      <th scope="row">&nbsp;{{ loop.index }}</th>
+      <td>&nbsp;{{ i['catname'] }}</td>
+        <td><a class="btn btn-danger" href="/admin_delete_cat/{{ i['cid'] }}"><font color="#f0f8ff">Delete</font></a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

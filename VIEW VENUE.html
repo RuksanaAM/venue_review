@@ -1,0 +1,31 @@
+{% extends 'admin/admin_panel.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table width="1427" border="1" class="table table-bordered">
+    <tr>
+      <th width="34" scope="row">SI</th>
+        <th width="122" scope="row"><div align="center">VENUE</div></th>
+      <td width="122"><div align="center">CATEGORY</div></td>
+      <td width="146"><div align="center">IMAGE</div></td>
+      <td width="204"><div align="center">DESCRIPTION</div></td>
+      <td width="143"><div align="center">LATITUDE</div></td>
+      <td width="143"><div align="center">LONGITUDE</div></td>
+
+      <td width="192">&nbsp;</td>
+    </tr>
+      {%for i in data%}
+    <tr>
+      <th scope="row">{{ loop.index }}</th>
+        <th scope="row"><div align="center">{{ i['vname'] }}</div></th>
+        <td>&nbsp;<div align="center">{{ i['catname'] }}</div></td>
+        <td>&nbsp;<div align="center"><img src="../static/venuepic/{{ i['image'] }}" width="150"></div></td>
+        <td>&nbsp;<div align="center">{{ i['description'] }}</div></td>
+        <td>&nbsp;<div align="center">{{ i['latitude'] }}</div></td>
+        <td>&nbsp;<div align="center">{{ i['longitude'] }}</div></td>
+
+        <td><a class="btn btn-danger" href="/admin_delete_venue/{{ i['vid'] }}"><font color="#f0f8ff">Delete</font></a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}
